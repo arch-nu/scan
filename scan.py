@@ -89,9 +89,9 @@ def ScanImage(address):
 if __name__=='__main__':
     
     #check scan
-    scan,sample_c=ScanImage('test/scantest.jpg')
+    scan,sample_c=ScanImage('test/scantest.jpg') #불러올 파일주소
     resize_scan=cv2.resize(scan, (0,0), fx=0.3, fy=0.3, interpolation=cv2.INTER_AREA)
-    
+    cv2.imwrite('test/scantest_result.png',scan) #파일저장
     cv2.imshow('scan',resize_scan)
     
     cv2.waitKey(0)
